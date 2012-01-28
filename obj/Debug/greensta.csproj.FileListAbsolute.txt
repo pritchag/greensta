@@ -1,5 +1,0 @@
-C:\git\greensta\bin\greensta.dll
-C:\git\greensta\bin\greensta.pdb
-C:\git\greensta\obj\Debug\ResolveAssemblyReference.cache
-C:\git\greensta\obj\Debug\greensta.dll
-C:\git\greensta\obj\Debug\greensta.pdb

@@ -1,5 +1,5 @@
-[Oo]bj/
-[Bb]in/
+obj/
+bin/
 *.suo
 *.user
 /TestResults
