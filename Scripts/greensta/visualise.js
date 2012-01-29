@@ -28,7 +28,7 @@
                 currentYear = this.ddgApp.year(),
                 expendableNow = this._calcExpendable(currentYear);
 
-            $("#vis_amount").text(Math.floor(expendable));
+            $("#vis_amount").text("£" + Math.floor(expendable));
 
 
             // how many shoes can we buy?
