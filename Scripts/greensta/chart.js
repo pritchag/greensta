@@ -10,6 +10,7 @@ ddg.registerClass({
     def: {
         _salary: null,
         _energy: null,
+        _food: null,
 
         _container: null,
         _highchart: null,
@@ -17,6 +18,7 @@ ddg.registerClass({
         init: function (construct) {
             this._salary = construct.salary;
             this._energy = construct.energy;
+            this._food = construct.food;
 
             this._setupContainer();
         },
@@ -26,10 +28,55 @@ ddg.registerClass({
 
             var salaryData = this._salary.data();
 
+            var seriesData = [
+                    {
+                        name: "Salary",
+                        data: salaryData,
+                        type: "area",
+                        tooltip: {
+                            yDecimals: 0,
+                            yPrefix: "£"
+                        }
+                    }
+            ];
+
+            var energyData = this._energy.data();
+
+            for (var energyType in energyData) {
+                seriesData.push({
+                    name: energyType.capitalise(),
+                    data: energyData[energyType],
+                    type: "area",
+                    stack: "outgoing",
+                    tooltip: {
+                        yDecimals: 0,
+                        yPrefix: "£"
+                    }
+                });
+            }
+
+            seriesData.push({
+                name: "Food",
+                data: this._food.data(),
+                type: "area",
+                stack: "outgoing",
+                tooltip: {
+                    yDecimals: 0,
+                    yPrefix: "£"
+                }
+            });
+
+            debugger;
+
             this._highchart = new Highcharts.StockChart({
                 chart: {
                     renderTo: this._container[0],
                     zoomType: "x"
+                },
+                plotOptions: {
+                    area: {
+                        stacking: "normal"
+                    }
                 },
                 xAxis: {
                     minRange: 10 * 365 * 24 * 3600 * 1000
@@ -61,15 +108,7 @@ ddg.registerClass({
                     text: 'Salary vs energy expenditure'
                 },
 
-                series: [{
-                    name: 'Salary',
-                    data: salaryData,
-                    type: 'area',
-                    tooltip: {
-                        yDecimals: 0,
-                        yPrefix: "£"
-                    }
-                }]
+                series: seriesData
             });
         },
 

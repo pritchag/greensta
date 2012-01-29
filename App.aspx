@@ -4,8 +4,9 @@
 <asp:Content ID="HeaderContent" ContentPlaceHolderID="HeadContent" runat="server">
     <script src="Scripts/ddg.core.min.js" type="text/javascript"></script>
     <script src="Scripts/highstock/highstock.src.js" type="text/javascript"></script>
+    <script src="Scripts/greensta/data.js" type="text/javascript"></script>
     <script src="Scripts/greensta/app.js" type="text/javascript"></script>
-    <script src="Scripts/greensta/salary.js" type="text/javascript"></script>
+    <script src="Scripts/greensta/crocp.js" type="text/javascript"></script>
     <script src="Scripts/greensta/energy.js" type="text/javascript"></script>
     <script src="Scripts/greensta/chart.js" type="text/javascript"></script>
     <style type="text/css">
@@ -41,8 +42,35 @@
             </p>
             <input type="radio" name="drivecar" value="yes" />
             Yes
-            <input type="radio" name="drivecar" value="no" />
+            <input type="radio" name="drivecar" value="no" checked="checked" />
             No
+            <div id="car_amount" style="display: none;">
+                <p>
+                    How much do you spend on your car each month?
+                </p>
+                <input type="text" id="car" />
+            </div>
+        </div>
+        <div>
+            <p>
+                Do you use public transport?
+            </p>
+            <input type="radio" name="usepubtran" value="yes" />
+            Yes
+            <input type="radio" name="usepubtran" value="no" checked="checked" />
+            No
+            <div id="pubtran_amount" style="display: none;">
+                <p>
+                    How much do you spend on public transport each month?
+                </p>
+                <input type="text" id="pubtran" />
+            </div>
+        </div>
+        <div>
+            <p>
+                How much do you spend on food each month?
+            </p>
+            <input type="text" id="food" />
         </div>
         <div class="buttons">
             <input type="button" id="respond" value="Respond" />

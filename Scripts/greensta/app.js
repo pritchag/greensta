@@ -5,7 +5,9 @@ ddg.registerClass({
 
     options: {
         historyYears: 20,
-        futureYears: 20
+        futureYears: 20,
+        salaryRate: 1.035,
+        cpiRate: 1.055
     },
 
     def: {
@@ -14,6 +16,7 @@ ddg.registerClass({
 
         _salary: null,
         _energy: null,
+        _food: null,
         _chart: null,
 
         _year: null,
@@ -42,8 +45,9 @@ ddg.registerClass({
 
         _initComponents: function () {
             var salary = this._salary = $ddgcreate({
-                type: greensta.salary,
-                creator: this
+                type: greensta.crocp,
+                creator: this,
+                params: this._ddgOptions.salaryRate
             });
 
             var energy = this._energy = $ddgcreate({
@@ -51,19 +55,24 @@ ddg.registerClass({
                 creator: this
             });
 
+            var food = this._food = $ddgcreate({
+                type: greensta.crocp,
+                creator: this,
+                params: [this._ddgOptions.cpiRate, 12]
+            });
+
             this._chart = $ddgcreate({
                 type: greensta.chart,
                 creator: this,
                 params: {
                     salary: salary,
-                    energy: energy
+                    energy: energy,
+                    food: food
                 }
             });
         },
 
         _respondClicked: function () {
-            this._salary.calculate();
-
             this._questionPage.hide();
             this._chartPage.show();
 
@@ -71,6 +80,14 @@ ddg.registerClass({
         },
 
         _renderChart: function () {
+            this._salary.currentValue(
+                $("#salary").val()
+            );
+
+            this._food.currentValue(
+                $("#food").val()
+            );
+
             this._chart.render();
         },
 
