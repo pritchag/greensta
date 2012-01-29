@@ -11,6 +11,7 @@ ddg.registerClass({
         _salary: null,
         _energy: null,
         _food: null,
+        _visualise: null,
 
         _container: null,
         _offset: null,
@@ -25,8 +26,17 @@ ddg.registerClass({
             this._salary = construct.salary;
             this._energy = construct.energy;
             this._food = construct.food;
+            this._visualise = construct.visualise;
 
             this._setupContainer();
+        },
+
+        lookupData: function () {
+            return {
+                salary: this._salaryData,
+                energy: this._energyData,
+                food: this._foodData
+            };
         },
 
         render: function () {
@@ -88,6 +98,9 @@ ddg.registerClass({
                             var container = $(this.container);
                             othis._offset = container.offset();
                             container.mousemove(othis._mousemove.bind(othis));
+                            container.mouseleave(function () {
+                                $("#rightcontent").hide();
+                            });
                         }
                     }
                 },
@@ -148,9 +161,14 @@ ddg.registerClass({
                     isInside = this._chart.isInsidePlot(x, y);
 
             if (isInside) {
+
+                $("#rightcontent").show();
+
                 var year = new Date(chart.xAxis[0].translate(x, true)).getFullYear();
 
-                var salary = this._salaryData[year];
+                this._visualise.visualise(year, this.lookupData());
+            } else {
+                $("#rightcontent").hide();
             }
         }
     }

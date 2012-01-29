@@ -9,6 +9,7 @@
     <script src="Scripts/greensta/crocp.js" type="text/javascript"></script>
     <script src="Scripts/greensta/energy.js" type="text/javascript"></script>
     <script src="Scripts/greensta/chart.js" type="text/javascript"></script>
+    <script src="Scripts/greensta/visualise.js" type="text/javascript"></script>
     <style type="text/css">
         .buttons
         {
@@ -91,7 +92,7 @@
             </div>
         </div>
         <div class="rightcol">
-            <div id="rightcontent" style="display:block;">
+            <div id="rightcontent" style="display:none;">
                 <div>
                     This chart means in <span id="vis_year"></span> you have <span id="vis_amount"></span>
                     left to spend after you've paid for energy and food. This could be used to buy...
@@ -99,30 +100,30 @@
 
                 <div>
                     <hr />
-                    <div class="item" style="overflow:hidden;">
+                    <div id="shoe" class="item" style="overflow:hidden;">
                             <div style="float:left;">
                                 <span class="number"></span><br />
                                 Shoes
                             </div>
-                        <div id="shoe" style="padding-left:100px;">
+                        <div class="items" style="padding-left:100px;">
                         </div>
                     </div>                           
                     <hr />
-                    <div class="item" style="overflow:hidden;">
+                    <div id="pint" class="item" style="overflow:hidden;">
                             <div style="float:left;">
                                 <span class="number"></span><br />
                                 Pints
                             </div>
-                        <div id="pint" style="padding-left:100px;">
+                        <div class="items" style="padding-left:100px;">
                         </div>
                     </div>     
                     <hr />
-                    <div class="item" style="overflow:hidden;">
+                    <div id="ticket" class="item" style="overflow:hidden;">
                             <div style="float:left;">
                                 <span class="number"></span><br />
                                 Cinema Tickets
                             </div>
-                        <div id="ticket" style="padding-left:100px;">
+                        <div class="items" style="padding-left:100px;">
                         </div>
                     </div>     
                     <hr />

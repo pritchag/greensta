@@ -18,6 +18,7 @@ ddg.registerClass({
         _energy: null,
         _food: null,
         _chart: null,
+        _visualise: null,
 
         _year: null,
 
@@ -61,15 +62,23 @@ ddg.registerClass({
                 params: [this._ddgOptions.cpiRate, 12]
             });
 
+            var visualise = this._visualise = $ddgcreate({
+                type: greensta.visualise,
+                creator: this
+            });
+
             this._chart = $ddgcreate({
                 type: greensta.chart,
                 creator: this,
                 params: {
                     salary: salary,
                     energy: energy,
-                    food: food
+                    food: food,
+                    visualise: visualise
                 }
             });
+
+
         },
 
         _respondClicked: function (e) {
