@@ -21,23 +21,28 @@
     </h1>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
     <section id="question_page">
          <div class="leftcol">       
             <div class="formitem">
                 <label for="salary">What is your annual salary?</label>
                 <input type="text" id="salary" />
             </div>  
+
+            <div class="formitem" style="margin-top:50px;">
+                <label for="gas">How much is your monthly gas bill?</label>
+                <input type="text" id="gas" />
+            </div>
+
+            <div class="formitem">
+                <label for="electricity">How much is your monthly electricity bill?</label>
+                <input type="text" id="electricity" />
+            </div>
          </div>
 
          <div class="rightcol">        
-            <div class="formitem">
-                <label for="gas">What is your monthly gas bill?</label>
-                <input type="text" id="gas" />
-            </div>
-            <div class="formitem">
-                <label for="electricity">What is your monthly electricity bill?</label>
-                <input type="text" id="electricity" />
-            </div>
+
+
             <div class="formitem">
                 <label for="drivecar">
                     Do you own a car?
@@ -45,6 +50,7 @@
                 <input type="radio" class="radio"  name="drivecar" value="yes" /> Yes &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="radio" class="radio"  name="drivecar" value="no" checked="checked" /> No
             </div>
+
             <div id="car_amount" class="formitem" style="display: none;">
                 <label for="travel">
                     How much do you spend on car fuel each month?</label>
@@ -75,64 +81,7 @@
         </div>         
 
     </section>
-    <%--    <div>
-        <p>
-            What is your annual salary?
-        </p>
-        <input type="text" id="salary" />
-    </div>
-    <div>
-        <p>
-            How much do you spend on electricity each month?
-        </p>
-        <input type="text" id="electricity" />
-    </div>
-    <div>
-        <p>
-            How much do you spend on gas each month?
-        </p>
-        <input type="text" id="gas" />
-    </div>
-    <div>
-        <p>
-            Do you drive a car?
-        </p>
-        <input type="radio" name="drivecar" value="yes" />
-        Yes
-        <input type="radio" name="drivecar" value="no" checked="checked" />
-        No
-        <div id="car_amount" style="display: none;">
-            <p>
-                How much do you spend on your car each month?
-            </p>
-            <input type="text" id="car" />
-        </div>
-    </div>
-    <div>
-        <p>
-            Do you use public transport?
-        </p>
-        <input type="radio" name="usepubtran" value="yes" />
-        Yes
-        <input type="radio" name="usepubtran" value="no" checked="checked" />
-        No
-        <div id="pubtran_amount" style="display: none;">
-            <p>
-                How much do you spend on public transport each month?
-            </p>
-            <input type="text" id="pubtran" />
-        </div>
-    </div>
-    <div>
-        <p>
-            How much do you spend on food each month?
-        </p>
-        <input type="text" id="food" />
-    </div>
-    <div class="buttons">
-        <input type="button" id="respond" value="Respond" />
-    </div>
-    --%>
+
     <section id="chart_page" style="display: none">
         <div id="chart">
         </div>
@@ -140,6 +89,7 @@
             <input type="button" id="back" value="&laquo; Back" />
         </div>
     </section>
+
     <script type="text/javascript">
     <!--
         $ddgload(function () {
