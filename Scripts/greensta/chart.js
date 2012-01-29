@@ -13,7 +13,13 @@ ddg.registerClass({
         _food: null,
 
         _container: null,
+        _offset: null,
+        _chart: null,
         _highchart: null,
+
+        _salaryData: null,
+        _energyData: null,
+        _foodData: null,
 
         init: function (construct) {
             this._salary = construct.salary;
@@ -24,14 +30,14 @@ ddg.registerClass({
         },
 
         render: function () {
-            var othis = this;
 
             var salaryData = this._salary.data();
+            this._salaryData = salaryData.lookup;
 
             var seriesData = [
                     {
                         name: "Salary",
-                        data: salaryData,
+                        data: salaryData.chart,
                         type: "area",
                         tooltip: {
                             yDecimals: 0,
@@ -41,11 +47,12 @@ ddg.registerClass({
             ];
 
             var energyData = this._energy.data();
+            this._energyData = energyData.lookup;
 
-            for (var energyType in energyData) {
+            for (var energyType in energyData.chart) {
                 seriesData.push({
                     name: energyType.capitalise(),
-                    data: energyData[energyType],
+                    data: energyData.chart[energyType],
                     type: "area",
                     stack: "outgoing",
                     tooltip: {
@@ -55,9 +62,12 @@ ddg.registerClass({
                 });
             }
 
+            var foodData = this._food.data();
+            this._foodData = foodData.lookup;
+
             seriesData.push({
                 name: "Food",
-                data: this._food.data(),
+                data: foodData.chart,
                 type: "area",
                 stack: "outgoing",
                 tooltip: {
@@ -66,10 +76,20 @@ ddg.registerClass({
                 }
             });
 
+            var othis = this;
+
             this._highchart = new Highcharts.StockChart({
                 chart: {
                     renderTo: this._container[0],
-                    zoomType: "x"
+                    zoomType: "x",
+                    events: {
+                        load: function (chart) {
+                            othis._chart = this;
+                            var container = $(this.container);
+                            othis._offset = container.offset();
+                            container.mousemove(othis._mousemove.bind(othis));
+                        }
+                    }
                 },
                 plotOptions: {
                     area: {
@@ -118,6 +138,20 @@ ddg.registerClass({
                     width: opts.width,
                     height: opts.height
                 }); ;
+        },
+
+        _mousemove: function (e) {
+            var chart = this._chart,
+                    offset = this._offset,
+                    x = e.pageX - chart.plotLeft - offset.left,
+                    y = e.pageY - chart.plotTop - offset.top,
+                    isInside = this._chart.isInsidePlot(x, y);
+
+            if (isInside) {
+                var year = new Date(chart.xAxis[0].translate(x, true)).getFullYear();
+
+                var salary = this._salaryData[year];
+            }
         }
     }
 });

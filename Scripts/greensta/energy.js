@@ -42,18 +42,26 @@
 
 
             var result = {
-                electricity: [],
-                gas: []
+                chart: {
+                    electricity: [],
+                    gas: []
+                },
+                lookup: {
+                    electricity: {},
+                    gas: {}
+                }
             };
 
             var isCar = ddg.util.isSomething(car),
                 isPubtran = ddg.util.isSomething(pubtran);
 
             if (isCar) {
-                result.car = [];
+                result.chart.car = [];
+                result.lookup.car = {};
             }
             if (isPubtran) {
-                result.pubtran = [];
+                result.chart.pubtran = [];
+                result.lookup.pubtran = {};
             }
 
             var thisYear = this.ddgApp.year(),
@@ -65,28 +73,37 @@
 
                 var utcDate = Date.UTC(i, 1, 1, 0, 0, 0, 0);
 
-                result.electricity.push([
+                var electricityValue = (rebasedData[i].electricity / 100) * electricity * 12;
+                result.chart.electricity.push([
                     utcDate,
-                    (rebasedData[i].electricity / 100) * electricity * 12
+                    electricityValue
                 ]);
+                result.lookup.electricity[i] = electricityValue;
 
-                result.gas.push([
+
+                var gasValue = (rebasedData[i].gas / 100) * gas * 12;
+                result.chart.gas.push([
                     utcDate,
-                    (rebasedData[i].gas / 100) * gas * 12
+                    gasValue
                 ]);
+                result.lookup.gas[i] = gasValue;
 
                 if (isCar) {
-                    result.car.push([
+                    var carValue = (rebasedData[i].car / 100) * car * 12;
+                    result.chart.car.push([
                         utcDate,
-                        (rebasedData[i].car / 100) * car * 12
+                        carValue
                     ]);
+                    result.lookup.car[i] = carValue;
                 }
 
                 if (isPubtran) {
-                    result.pubtran.push([
+                    var pubtranValue = (rebasedData[i].pubtran / 100) * pubtran * 12;
+                    result.chart.pubtran.push([
                         utcDate,
-                        (rebasedData[i].pubtran / 100) * pubtran * 12
+                        pubtranValue
                     ]);
+                    result.lookup.pubtran[i] = pubtranValue;
                 }
 
             }

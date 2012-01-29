@@ -26,14 +26,21 @@ ddg.registerClass({
         },
 
         _calculate: function () {
-            var result = [],
-                thisYear = this.ddgApp.year();
+            var result = {
+                chart: [],
+                lookup: {}
+            };
+            var thisYear = this.ddgApp.year();
 
             this._calculateHistory(result, thisYear);
-            result.push([
+
+            var currentValue = this._currentValue * this._multiplier;
+            result.chart.push([
                 this.ddgApp.yearToUtcDate(thisYear),
-                this._currentValue * this._multiplier
+                currentValue
             ]);
+            result.lookup[thisYear] = currentValue;
+
             this._calculateFuture(result, thisYear);
 
             return result;
@@ -44,11 +51,14 @@ ddg.registerClass({
                 valueNow = this._currentValue;
 
             for (var i = 1; i <= years; i++) {
-                var year = thisYear - i;
-                result[years - i] = [
+                var year = thisYear - i,
+                    val = (valueNow /= this._rateOfChange) * this._multiplier;
+                result.chart[years - i] = [
                     this.ddgApp.yearToUtcDate(year),
-                    (valueNow /= this._rateOfChange) * this._multiplier
+                    val
                 ];
+                result.lookup[year] = val;
+
             }
         },
 
@@ -57,11 +67,13 @@ ddg.registerClass({
                 valueNow = this._currentValue;
 
             for (var i = 1; i <= years; i++) {
-                var year = thisYear + i;
-                result.push([
+                var year = thisYear + i,
+                    val = (valueNow *= this._rateOfChange) * this._multiplier;
+                result.chart.push([
                     this.ddgApp.yearToUtcDate(year),
-                    (valueNow *= this._rateOfChange) * this._multiplier
+                    val
                 ]);
+                result.lookup[year] = val;
             }
         }
     }

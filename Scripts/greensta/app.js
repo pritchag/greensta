@@ -75,8 +75,6 @@ ddg.registerClass({
         _respondClicked: function (e) {
             e.preventDefault();
 
-            debugger;
-
             this._questionPage.hide();
             this._chartPage.show();
 

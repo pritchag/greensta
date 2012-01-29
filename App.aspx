@@ -21,8 +21,8 @@
     </h1>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-<div class="hppage"> 
-    <section id="question_page">
+    <div class="hppage">
+        <section id="question_page">
      
          <div class="leftcol">       
             <div class="formitem">
@@ -51,6 +51,11 @@
                 <input type="radio" class="radio" name="usepubtran" value="yes" />  Yes &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="radio" class="radio" name="usepubtran" value="no" checked="checked" /> No
             </div>
+            <div id="pubtran_amount" class="formitem" style="display: none;">
+                <label for="travel">
+                    How much do you spend on public transport each month?</label>
+                <input type="text" id="pubtran" />
+            </div>
 
          </div>
 
@@ -64,14 +69,7 @@
             <div class="formitem">
                 <label for="electricity">How much is your monthly electricity bill?</label>
                 <input type="text" id="electricity" />
-            </div>
-          
-
-            <div id="pubtran_amount" class="formitem" style="display: none;">
-                <label for="travel">
-                    How much do you spend on public transport each month?</label>
-                <input type="text" id="pubtran" />
-            </div>
+            </div>          
 
             <div class="formitem">
                 <label for="food">How much do you spend on food each month?</label>
@@ -84,21 +82,55 @@
         </div>         
 
     </section>
-</div>
+    </div>
     <section id="chart_page" style="display: none">
-        <div class="leftcol"><div id="chart">
-        </div>
-        <div class="buttons">
-            <input type="button" id="back" value="&laquo; Back" />
-        </div>
+        <div class="leftcol">
+            <div id="chart"></div>
+            <div class="buttons">
+                <input type="button" id="back" value="&laquo; Back" />
+            </div>
         </div>
         <div class="rightcol">
-        
-        Add the visuals here
+            <div id="rightcontent" style="display:block;">
+                <div>
+                    This chart means in <span id="vis_year"></span> you have <span id="vis_amount"></span>
+                    left to spend after you've paid for energy and food. This could be used to buy...
+                </div>
+
+                <div>
+                    <hr />
+                    <div class="item" style="overflow:hidden;">
+                            <div style="float:left;">
+                                <span class="number"></span><br />
+                                Shoes
+                            </div>
+                        <div id="shoe" style="padding-left:100px;">
+                        </div>
+                    </div>                           
+                    <hr />
+                    <div class="item" style="overflow:hidden;">
+                            <div style="float:left;">
+                                <span class="number"></span><br />
+                                Pints
+                            </div>
+                        <div id="pint" style="padding-left:100px;">
+                        </div>
+                    </div>     
+                    <hr />
+                    <div class="item" style="overflow:hidden;">
+                            <div style="float:left;">
+                                <span class="number"></span><br />
+                                Cinema Tickets
+                            </div>
+                        <div id="ticket" style="padding-left:100px;">
+                        </div>
+                    </div>     
+                    <hr />
+                </div>
+            </div>
         
         </div>
     </section>
-
     <script type="text/javascript">
     <!--
         $ddgload(function () {
