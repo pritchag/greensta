@@ -34,18 +34,18 @@
             // how many shoes can we buy?
             var shoesNow = expendableNow / this._shoeData[currentYear],
                 shoes = expendable / this._shoeData[year];
-            this._updateNumber("shoe", shoesNow, shoes);
+            this._updateNumber("shoe", shoesNow, shoes, 7);
 
             var pintsNow = expendableNow / this._pintData[currentYear],
                 pints = expendable / this._pintData[year];
-            this._updateNumber("pint", pintsNow, pints);
+            this._updateNumber("pint", pintsNow, pints, 15);
 
             var ticketsNow = expendableNow / this._ticketData[currentYear],
                 tickets = expendable / this._ticketData[year];
-            this._updateNumber("ticket", ticketsNow, tickets);
+            this._updateNumber("ticket", ticketsNow, tickets, 5);
         },
 
-        _updateNumber: function (what, now, then) {
+        _updateNumber: function (what, now, then, howMany) {
             // round
             now = Math.round(now);
             then = Math.round(then);
@@ -57,11 +57,27 @@
             var pct = then / now;
             if (pct > 1) pct = 1;
 
-            var numberOn = Math.round(pct * 10);
-            var numberOff = 10 - numberOn;
+            var numberOn = Math.round(pct * howMany);
+            var numberOff = howMany - numberOn;
 
+            // clear images
+            var items = $("#" + what + " div.items");
+            items.find("img").remove();
 
+            // populate on images
+            for (var i = 0; i < numberOn; i++) {
+                items.append(this._buildImg(what + "on"));
+            }
 
+            // populate off images
+            for (var j = 0; j < numberOff; j++) {
+                items.append(this._buildImg(what));
+            }
+
+        },
+
+        _buildImg: function (name) {
+            return $('<img/>').attr("src", "Images/" + name + ".png");
         },
 
 
