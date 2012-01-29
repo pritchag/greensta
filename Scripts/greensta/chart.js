@@ -3,7 +3,7 @@ ddg.registerClass({
     name: "greensta.chart",
 
     options: {
-        width: "50%",
+        width: "100%",
         height: "400px"
     },
 

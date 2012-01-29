@@ -21,27 +21,14 @@
     </h1>
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+<div class="hppage"> 
     <section id="question_page">
+     
          <div class="leftcol">       
             <div class="formitem">
                 <label for="salary">What is your annual salary?</label>
                 <input type="text" id="salary" />
             </div>  
-
-            <div class="formitem" style="margin-top:50px;">
-                <label for="gas">How much is your monthly gas bill?</label>
-                <input type="text" id="gas" />
-            </div>
-
-            <div class="formitem">
-                <label for="electricity">How much is your monthly electricity bill?</label>
-                <input type="text" id="electricity" />
-            </div>
-         </div>
-
-         <div class="rightcol">        
-
 
             <div class="formitem">
                 <label for="drivecar">
@@ -64,6 +51,22 @@
                 <input type="radio" class="radio" name="usepubtran" value="yes" />  Yes &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="radio" class="radio" name="usepubtran" value="no" checked="checked" /> No
             </div>
+
+         </div>
+
+         <div class="rightcol">        
+
+           <div class="formitem">
+                <label for="gas">How much is your monthly gas bill?</label>
+                <input type="text" id="gas" />
+            </div>
+
+            <div class="formitem">
+                <label for="electricity">How much is your monthly electricity bill?</label>
+                <input type="text" id="electricity" />
+            </div>
+          
+
             <div id="pubtran_amount" class="formitem" style="display: none;">
                 <label for="travel">
                     How much do you spend on public transport each month?</label>
@@ -81,12 +84,18 @@
         </div>         
 
     </section>
-
+</div>
     <section id="chart_page" style="display: none">
-        <div id="chart">
+        <div class="leftcol"><div id="chart">
         </div>
         <div class="buttons">
             <input type="button" id="back" value="&laquo; Back" />
+        </div>
+        </div>
+        <div class="rightcol">
+        
+        Add the visuals here
+        
         </div>
     </section>
 

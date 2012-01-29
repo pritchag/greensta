@@ -141,6 +141,27 @@ header
     float:right;
 }
 
+
+#chart_page .leftcol
+{
+   
+    width: 470px;
+    margin:0 10px 0 0;
+   
+    float:left;
+}
+
+#chart_page .rightcol
+{
+    
+    width: 470px;
+     margin:0 10px 0 0;
+     float:right;
+ 
+}
+
+
+
 footer
 {
     color: #4e5766;
