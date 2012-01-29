@@ -7,7 +7,7 @@ ddg.registerClass({
         _data: null,
 
         calculate: function () {
-            var s = this._salary = Number($("#answer_salary").val());
+            var s = this._salary = Number($("#salary").val());
 
             var sd = this._data = [],
                 thisYear = this.ddgApp.year();

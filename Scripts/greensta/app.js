@@ -9,6 +9,9 @@ ddg.registerClass({
     },
 
     def: {
+        _questionPage: null,
+        _chartPage: null,
+
         _salary: null,
         _energy: null,
         _chart: null,
@@ -18,11 +21,15 @@ ddg.registerClass({
         init: function (construct) {
             this._super(construct);
 
+            this._questionPage = $("#question_page");
+            this._chartPage = $("#chart_page");
+
             this._year = new Date().getFullYear();
 
             this._initComponents();
 
             $("#respond").click(this._respondClicked.bind(this));
+            $("#back").click(this._backClicked.bind(this));
         },
 
         year: function () {
@@ -57,11 +64,19 @@ ddg.registerClass({
         _respondClicked: function () {
             this._salary.calculate();
 
+            this._questionPage.hide();
+            this._chartPage.show();
+
             this._renderChart();
         },
 
         _renderChart: function () {
             this._chart.render();
+        },
+
+        _backClicked: function () {
+            this._chartPage.hide();
+            this._questionPage.show();
         }
     }
 });
