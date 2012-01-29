@@ -3,7 +3,7 @@ ddg.registerClass({
     name: "greensta.chart",
 
     options: {
-        width: "100%",
+        width: "50%",
         height: "400px"
     },
 
@@ -65,8 +65,6 @@ ddg.registerClass({
                     yPrefix: "£"
                 }
             });
-
-            debugger;
 
             this._highchart = new Highcharts.StockChart({
                 chart: {
