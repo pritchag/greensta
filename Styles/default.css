@@ -93,9 +93,14 @@ first child of the left and right table columns */
 .page, .hppage
 {
     width: 960px;
-  
+  min-height:450px;
     margin: 20px auto 0px auto;
    
+}
+.page .hppage 
+{
+    
+ min-height:5px;   
 }
 header
 {
@@ -180,6 +185,13 @@ footer
 }
 /* CONTENT  
 ----------------------------------------------------------*/
+
+#vis_year, #vis_amount, .item span 
+{
+ color:#cb1e1e;   
+}
+
+
 .logo 
 {
     
