@@ -105,7 +105,8 @@
                     <div id="shoe" class="item" style="overflow:hidden;">
                             <div style="float:left;">
                                 <span class="number"></span><br />
-                                Shoes
+                                Shoes<br />
+                                <em class="cost"></em>
                             </div>
                         <div class="items" style="padding-left:100px;">
                         </div>
@@ -114,7 +115,8 @@
                     <div id="pint" class="item" style="overflow:hidden;">
                             <div style="float:left;">
                                 <span class="number"></span><br />
-                                Pints
+                                Pints<br />
+                                <em class="cost"></em>
                             </div>
                         <div class="items" style="padding-left:100px;">
                         </div>
@@ -123,7 +125,8 @@
                     <div id="ticket" class="item" style="overflow:hidden;">
                             <div style="float:left;">
                                 <span class="number"></span><br />
-                                Cinema Tickets
+                                Cinema Tickets<br />
+                                <em class="cost"></em>
                             </div>
                         <div class="items" style="padding-left:100px;">
                         </div>

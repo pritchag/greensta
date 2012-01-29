@@ -34,24 +34,25 @@
             // how many shoes can we buy?
             var shoesNow = expendableNow / this._shoeData[currentYear],
                 shoes = expendable / this._shoeData[year];
-            this._updateNumber("shoe", shoesNow, shoes, 7);
+            this._updateNumber("shoe", shoesNow, shoes, 7, this._shoeData[year]);
 
             var pintsNow = expendableNow / this._pintData[currentYear],
                 pints = expendable / this._pintData[year];
-            this._updateNumber("pint", pintsNow, pints, 15);
+            this._updateNumber("pint", pintsNow, pints, 15, this._pintData[year]);
 
             var ticketsNow = expendableNow / this._ticketData[currentYear],
                 tickets = expendable / this._ticketData[year];
-            this._updateNumber("ticket", ticketsNow, tickets, 5);
+            this._updateNumber("ticket", ticketsNow, tickets, 5, this._ticketData[year]);
         },
 
-        _updateNumber: function (what, now, then, howMany) {
+        _updateNumber: function (what, now, then, howMany, cost) {
             // round
             now = Math.round(now);
             then = Math.round(then);
 
             // update value
             $("#" + what + " span.number").text(then);
+            $("#" + what + " em.cost").text("£" + Math.round(cost));
 
             // percentage then of now 
             var pct = then / now;
