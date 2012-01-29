@@ -92,7 +92,9 @@
             </div>
         </div>
         <div class="rightcol">
-            <div id="rightcontent" style="display:none;">
+            <h1 style="font-size:20px;">Mouse over chart for more information</h1>
+
+            <div id="rightcontent" style="display:none; margin-top:25px;">
                 <div>
                     This chart means in <span id="vis_year"></span> you have <span id="vis_amount"></span>
                     left to spend after you've paid for energy and food. This could be used to buy...
