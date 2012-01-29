@@ -42,8 +42,8 @@
                 <label for="drivecar">
                     Do you own a car?
                 </label>
-                <input type="radio" name="drivecar" value="yes" /> Yes
-                <input type="radio" name="drivecar" value="no" checked="checked" /> No
+                <input type="radio" class="radio"  name="drivecar" value="yes" /> Yes &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" class="radio"  name="drivecar" value="no" checked="checked" /> No
             </div>
             <div id="car_amount" class="formitem" style="display: none;">
                 <label for="travel">
@@ -55,8 +55,8 @@
                 <label for="usepubtran">
                     Do you use public transport?
                 </label>
-                <input type="radio" name="usepubtran" value="yes" /> Yes
-                <input type="radio" name="usepubtran" value="no" checked="checked" /> No
+                <input type="radio" class="radio" name="usepubtran" value="yes" />  Yes &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" class="radio" name="usepubtran" value="no" checked="checked" /> No
             </div>
             <div id="pubtran_amount" class="formitem" style="display: none;">
                 <label for="travel">

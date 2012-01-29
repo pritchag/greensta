@@ -206,6 +206,7 @@ text-decoration:none;
  display:inline-block;
  width:auto;
  margin:0 auto;
+ border-radius:4px;
 }
 /* TAB MENU   
 ----------------------------------------------------------*/
@@ -307,7 +308,12 @@ input
  padding:5px 10px;
  color:#808080;
  font-style:italic;
+ border-radius:4px;
 }
+
+.radio {width:auto; margin: 0 5px 0 0; }
+
+
 
 input.textEntry 
 {
