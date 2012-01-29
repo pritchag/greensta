@@ -87,7 +87,9 @@
     <Content Include="Scripts\highstock\themes\gray.js" />
     <Content Include="Scripts\highstock\themes\grid.js" />
     <Content Include="Scripts\highstock\themes\skies.js" />
-    <Content Include="Styles\Site.css" />
+    <Content Include="Styles\default.css" />
+    <Content Include="Styles\fonts.css" />
+    <Content Include="Styles\reset.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />

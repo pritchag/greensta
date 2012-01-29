@@ -24,26 +24,22 @@
     <section id="question_page">
          <div class="leftcol">       
             <div class="formitem">
-                <label for="salary">What is your salary</label>
+                <label for="salary">What is your annual salary?</label>
                 <input type="text" id="salary" />
             </div>  
          </div>
 
          <div class="rightcol">        
             <div class="formitem">
-                <label for="gas">What is your monthly gas bill</label>
+                <label for="gas">What is your monthly gas bill?</label>
                 <input type="text" id="gas" />
             </div>
             <div class="formitem">
-                <label for="electricity">What is your monthly electricity bill</label>
+                <label for="electricity">What is your monthly electricity bill?</label>
                 <input type="text" id="electricity" />
             </div>
             <div class="formitem">
-                <label for="salary">What is your salary</label>
-                <input type="text" name="salary" id="Text3" />
-            </div>
-            <div class="car">
-                <label for="car">
+                <label for="drivecar">
                     Do you own a car?
                 </label>
                 <input type="radio" name="drivecar" value="yes" /> Yes
@@ -51,13 +47,33 @@
             </div>
             <div id="car_amount" class="formitem" style="display: none;">
                 <label for="travel">
-                    How much do you spend on travel?</label>
-                <input type="text" name="travel" id="travel" />
+                    How much do you spend on car fuel each month?</label>
+                <input type="text" id="car" />
             </div>
+
+            <div class="formitem">
+                <label for="usepubtran">
+                    Do you use public transport?
+                </label>
+                <input type="radio" name="usepubtran" value="yes" /> Yes
+                <input type="radio" name="usepubtran" value="no" checked="checked" /> No
             </div>
+            <div id="pubtran_amount" class="formitem" style="display: none;">
+                <label for="travel">
+                    How much do you spend on public transport each month?</label>
+                <input type="text" id="pubtran" />
+            </div>
+
+            <div class="formitem">
+                <label for="food">How much do you spend on food each month?</label>
+                <input type="text" id="food" />
+            </div>
+            
             <div class="input">
-                <a href="App.aspx">Show me the money</a>
-            </div>
+                <a id="respond" href="App.aspx">Show me the money</a>
+            </div>  
+        </div>         
+
     </section>
     <%--    <div>
         <p>
@@ -117,13 +133,13 @@
         <input type="button" id="respond" value="Respond" />
     </div>
     --%>
-    <div id="chart_page" style="display: none">
+    <section id="chart_page" style="display: none">
         <div id="chart">
         </div>
         <div class="buttons">
             <input type="button" id="back" value="&laquo; Back" />
         </div>
-    </div>
+    </section>
     <script type="text/javascript">
     <!--
         $ddgload(function () {
