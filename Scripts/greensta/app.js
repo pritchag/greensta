@@ -13,12 +13,24 @@ ddg.registerClass({
         _energy: null,
         _chart: null,
 
+        _year: null,
+
         init: function (construct) {
             this._super(construct);
+
+            this._year = new Date().getFullYear();
 
             this._initComponents();
 
             $("#respond").click(this._respondClicked.bind(this));
+        },
+
+        year: function () {
+            return this._year;
+        },
+
+        yearToUtcDate: function (year) {
+            return Date.UTC(year, 01, 01, 00, 00, 00, 00);
         },
 
         _initComponents: function () {
@@ -37,7 +49,7 @@ ddg.registerClass({
                 creator: this,
                 params: {
                     salary: salary,
-                    energy: energy 
+                    energy: energy
                 }
             });
         },

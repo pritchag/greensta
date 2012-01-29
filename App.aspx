@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="App.aspx.cs" Inherits="greensta.Questions" %>
 <asp:Content ID="HeaderContent" ContentPlaceHolderID="HeadContent" runat="server">
+    <script src="Scripts/ddg.core.min.js" type="text/javascript"></script>
+    <script src="Scripts/highstock/highstock.src.js" type="text/javascript"></script>
     <script src="Scripts/greensta/app.js" type="text/javascript"></script>
     <script src="Scripts/greensta/salary.js" type="text/javascript"></script>
     <script src="Scripts/greensta/energy.js" type="text/javascript"></script>

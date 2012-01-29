@@ -69,10 +69,10 @@
     <Content Include="Scripts\highcharts\highcharts.js" />
     <Content Include="Scripts\highcharts\modules\exporting.js" />
     <Content Include="Scripts\highcharts\modules\exporting.src.js" />
-    <Content Include="Scripts\highcharts\themes\dark-blue.js" />
-    <Content Include="Scripts\highcharts\themes\dark-green.js" />
-    <Content Include="Scripts\highcharts\themes\gray.js" />
-    <Content Include="Scripts\highcharts\themes\grid.js" />
+    <Content Include="Scripts\highcharts\themes_\dark-blue.js" />
+    <Content Include="Scripts\highcharts\themes_\dark-green.js" />
+    <Content Include="Scripts\highcharts\themes_\gray.js" />
+    <Content Include="Scripts\highcharts\themes_\grid.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
