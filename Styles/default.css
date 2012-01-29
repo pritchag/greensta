@@ -93,7 +93,7 @@ first child of the left and right table columns */
 .page, .hppage
 {
     width: 960px;
-  min-height:450px;
+  min-height:550px;
     margin: 20px auto 0px auto;
    
 }
@@ -337,7 +337,7 @@ input
     
  border:0;
  width: 150px;
- background:#eeeeee;   
+ background:#E5E5E5;   
  padding:5px 10px;
  color:#808080;
  font-style:italic;
@@ -421,3 +421,9 @@ div.accountInfo
     text-align: right;
     padding-right: 10px;
 }
+#back
+{
+    
+ background: #e5e5e5;   
+}
+    

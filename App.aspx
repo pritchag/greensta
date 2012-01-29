@@ -88,16 +88,16 @@
         <div class="leftcol">
             <div id="chart"></div>
             <div class="buttons">
-                <input type="button" id="back" value="&laquo; Back" />
+                <input type="button" id="back" value="Back" />
             </div>
         </div>
         <div class="rightcol">
-            <h1 style="font-size:20px;">Mouse over chart for more information</h1>
+            <p style="font-size:16px; font-style:italic;">Mouse over chart for more information</p>
 
             <div id="rightcontent" style="display:none; margin-top:25px;">
                 <div>
-                    This chart means in <span id="vis_year"></span> you have <span id="vis_amount"></span>
-                    left to spend after you've paid for energy and food. This could be used to buy...
+                  <h2>  This chart means in <span id="vis_year"></span> you have <span id="vis_amount"></span>
+                    left to spend after you've paid for energy and food. This could be used to buy...</h2>
                 </div>
 
                 <div>
