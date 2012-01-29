@@ -51,6 +51,16 @@ h1
     
     filter: dropshadow(color=#b7ddc4, offx=, offy=0); 
 }
+
+#question_page h1
+{
+    font-size:2em;
+     font-weight:normal;
+    color:#808080;
+    font-family: 'Asap', Helvetica, Verdana, sans-serif;
+    text-shadow:none;
+  
+}
 h2
 {
     font-size:1.563em;

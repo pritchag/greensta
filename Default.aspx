@@ -8,7 +8,7 @@
           <div class="hppage">   <h1>
                  What can you afford in the future?
             </h1>
-            <h2>Just answer the questions below to find out </h2>
+            
             </div>
 </asp:Content>
 
