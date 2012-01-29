@@ -32,15 +32,15 @@
 
      <div class="rightcol">        
         <div class="formitem">
-            <label for="gasbill">What is your monthly gas bill</label>
+            <label for="gasbill">What is your monthly gas bill?</label>
             <input type="text" name="gasbill" id="gasbill" />
         </div>
         <div class="formitem">
-            <label for="elecbill">What is your monthly electricity bill</label>
+            <label for="elecbill">What is your monthly electricity bill?</label>
             <input type="text" name="elecbill" id="elecbill" />
         </div>
         <div class="formitem">
-            <label for="salary">What is your salary</label>
+            <label for="salary">What is your salary?</label>
             <input type="text" name="salary" id="Text3" />
         </div>
         <div class="car">
@@ -55,6 +55,7 @@
         </div>
        
    </div>
+   <div class="clear"></div>
    <div class="input">
         <a href="App.aspx">Show me the money</a>
    </div>
