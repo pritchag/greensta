@@ -3,9 +3,9 @@
 
 body   
 {
-    background: #b6b7bc;
+ 
     font-size: .80em;
-    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    font-family: 'Asap', Helvetica, Verdana, sans-serif;
     margin: 0px;
     padding: 0px;
     color: #696969;
@@ -36,28 +36,32 @@ p
 
 /* HEADINGS   
 ----------------------------------------------------------*/
-
-h1, h2, h3, h4, h5, h6
-{
-    font-size: 1.5em;
-    color: #666666;
-    font-variant: small-caps;
-    text-transform: none;
-    font-weight: 200;
-    margin-bottom: 0px;
-}
-
 h1
 {
-    font-size: 1.6em;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #31b55c;
+    border: none;
+    line-height: 2em;
+    font-size: 2.5em;
+    text-align:center;
+    font-family: "Droid Serif", Georgia, Times New Roman, Times, serif;
+    text-shadow: 0px 0px 6px #b7ddc4;
+    
+    filter: dropshadow(color=#b7ddc4, offx=, offy=0); 
 }
-
 h2
 {
-    font-size: 1.5em;
-    font-weight: 600;
+    font-size:1.563em;
+   font-weight:normal;
+    color:#808080;
+    font-family: 'Asap', Helvetica, Verdana, sans-serif;
+}
+
+.hppage h2 
+{
+ text-align:center;   
 }
 
 h3
@@ -77,7 +81,7 @@ h5, h6
 
 /* this rule styles <h1> and <h2> tags that are the 
 first child of the left and right table columns */
-.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+.rightcol > h1, .rightcol > h2, .leftcol > h1, .leftcol > h2
 {
     margin-top: 0px;
 }
@@ -86,50 +90,58 @@ first child of the left and right table columns */
 /* PRIMARY LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
 
-.page
+.page, .hppage
 {
     width: 960px;
-    background-color: #fff;
+  
     margin: 20px auto 0px auto;
-    border: 1px solid #496077;
+   
 }
-
-.header
+header
 {
     position: relative;
     margin: 0px;
     padding: 0px;
-    background: #4b6c9e;
     width: 100%;
 }
 
-.header h1
-{
-    font-weight: 700;
-    margin: 0px;
-    padding: 0px 0px 0px 20px;
-    color: #f9f9f9;
-    border: none;
-    line-height: 2em;
-    font-size: 2em;
-}
+
 
 .main
 {
     padding: 0px 12px;
     margin: 12px 8px 8px 8px;
-    min-height: 420px;
+    min-height: 20px;
 }
 
-.leftCol
+.hppage section
+{
+    width:600px;
+    margin:50px auto;
+    clear:both;
+}
+
+.leftcol
 {
     padding: 6px 0px;
-    margin: 12px 8px 8px 8px;
-    width: 200px;
+    margin: 0;
+    width: 290px;
+    padding:0 0 10px 0;
     min-height: 200px;
+    float:left;
 }
 
-.footer
+.rightcol
+{
+    padding: 6px 0px;
+    margin: 0;
+    width: 290px;
+     padding:0 0 0 10px;
+    min-height: 200px;
+    float:right;
+}
+
+footer
 {
     color: #4e5766;
     padding: 8px 0px 0px 0px;
@@ -139,12 +151,36 @@ first child of the left and right table columns */
 }
 
 
+/* CONTENT  
+----------------------------------------------------------*/
+.hppage p 
+{
+     text-align:center;
+    
+}
+
+a.survey:link, a.survey:visited 
+{
+ display:inline-block;
+ text-decoration:none;
+ color:#808080;
+ background:transparent url('/images/arw.png') no-repeat right;
+ padding-right:55px;
+    
+}
+
+.survey span 
+{
+    
+ font-size:1.563em;   
+}
+
 /* TAB MENU   
 ----------------------------------------------------------*/
 
 div.hideSkiplink
 {
-    background-color:#3a4f63;
+    
     width:100%;
 }
 
@@ -163,7 +199,7 @@ div.menu ul
 
 div.menu ul li a, div.menu ul li a:visited
 {
-    background-color: #465c71;
+   
     border: 1px #4e667d solid;
     color: #dde4ec;
     display: block;
@@ -175,21 +211,24 @@ div.menu ul li a, div.menu ul li a:visited
 
 div.menu ul li a:hover
 {
-    background-color: #bfcbd6;
+  
     color: #465c71;
     text-decoration: none;
 }
 
 div.menu ul li a:active
 {
-    background-color: #465c71;
+    
     color: #cfdbe6;
     text-decoration: none;
 }
 
 /* FORM ELEMENTS   
 ----------------------------------------------------------*/
-
+.formitem
+{
+ margin:0 0 20px 0;   
+}
 fieldset
 {
     margin: 1em 0px;
@@ -205,6 +244,7 @@ fieldset p
 fieldset.login label, fieldset.register label, fieldset.changePassword label
 {
     display: block;
+     font-family: 'Asap', Helvetica, Verdana, sans-serif;
 }
 
 fieldset label.inline 
@@ -217,6 +257,22 @@ legend
     font-size: 1.1em;
     font-weight: 600;
     padding: 2px 4px 8px 4px;
+}
+
+label 
+{
+    
+ margin:0PX 0PX 5px 0PX;   
+ display:block;
+}
+
+input
+{
+    
+ border:0;
+ width: 100px;
+ background:#eeeeee;   
+ padding:5px 10px;
 }
 
 input.textEntry 
