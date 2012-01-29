@@ -28,10 +28,8 @@
                 <label for="salary">What is your annual salary?</label>
                 <input type="text" id="salary" />
             </div>  
-         </div>
 
-         <div class="rightcol">        
-            <div class="formitem">
+            <div class="formitem" style="margin-top:50px;">
                 <label for="gas">How much is your monthly gas bill?</label>
                 <input type="text" id="gas" />
             </div>
@@ -40,6 +38,10 @@
                 <label for="electricity">How much is your monthly electricity bill?</label>
                 <input type="text" id="electricity" />
             </div>
+         </div>
+
+         <div class="rightcol">        
+
 
             <div class="formitem">
                 <label for="drivecar">

@@ -6,12 +6,21 @@
         init: function () {
             this._super();
 
-            $("input[name=drivecar]").change(this._drivecarClicked.bind(this));
-            $("input[name=usepubtran]").change(this._usepubtranClicked.bind(this));
+            this._setupRadioOptions();
         },
 
         data: function () {
             return this._calculate();
+        },
+
+        _setupRadioOptions: function () {
+            var drivecar = $("input[name=drivecar]");
+            drivecar.change(this._drivecarClicked.bind(this));
+            if (drivecar.filter(":checked").val() === "yes") this._drivecarClicked();
+
+            var usepubtran = $("input[name=usepubtran]");
+            usepubtran.change(this._usepubtranClicked.bind(this));
+            if (usepubtran.filter(":checked").val() === "yes") this._usepubtranClicked();
         },
 
         _drivecarClicked: function (e) {
