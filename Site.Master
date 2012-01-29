@@ -23,6 +23,9 @@
             <img src="/images/greensta-logo.png" />
         
          </div>
+
+         <asp:ContentPlaceHolder ID="HeaderContent" runat="server" />
+        </header>
             
         
         <div class="main">
