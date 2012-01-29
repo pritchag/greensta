@@ -31,13 +31,11 @@ ddg.registerClass({
                     renderTo: this._container[0],
                     zoomType: "x"
                 },
+                xAxis: {
+                    minRange: 10 * 365 * 24 * 3600 * 1000
+                },
                 rangeSelector: {
                     buttons: [
-                        {
-                            type: "year",
-                            count: 5,
-                            text: "5 yr"
-                        },
                         {
                             type: "year",
                             count: 10,
