@@ -14,51 +14,61 @@ ddg.registerClass({
         _container: null,
         _highchart: null,
 
-        _years: null,
-
         init: function (construct) {
             this._salary = construct.salary;
             this._energy = construct.energy;
 
             this._setupContainer();
-            this._generateYears();
         },
 
         render: function () {
-            this._highchart = new Highcharts.Chart({
+            var othis = this;
+
+            var salaryData = this._salary.data();
+
+            this._highchart = new Highcharts.StockChart({
                 chart: {
                     renderTo: this._container[0],
-                    defaultSeriesType: "area"
+                    zoomType: "x"
+                },
+                xAxis: {
+                    minRange: 10 * 365 * 24 * 3600 * 1000
+                },
+                rangeSelector: {
+                    buttons: [
+                        {
+                            type: "year",
+                            count: 10,
+                            text: "10 yr"
+                        },
+                        {
+                            type: "year",
+                            count: 20,
+                            text: "20 yr"
+                        },
+                        {
+                            type: "all",
+                            text: "All"
+                        }
+                    ],
+                    buttonSpacing: 5,
+                    buttonTheme: {
+                        width: 50
+                    },
+                    inputEnabled: false
                 },
                 title: {
                     text: 'Salary vs energy expenditure'
                 },
-                xAxis: {
-                    title: {
-                        enabled: false
-                    },
-                    tickmarkPlacement: "on",
-                    categories: this._years
-                },
-                yAxis: {
-                    title: {
-                        text: 'Amount (£)'
-                    }
-                },
-                plotOptions: {
-                    area: {
-                        stacking: "normal",
-                        lineColor: "#666666",
-                        lineWidth: 1,
-                        marker: {
-                            lineWidth: 1,
-                            lineColor: "#666666"
-                        }
-                    }
-                },
+
                 series: [{
                     name: 'Salary',
-                    data: this._salary.data()
+                    data: salaryData,
+                    type: 'area',
+                    tooltip: {
+                        yDecimals: 0,
+                        yPrefix: "£"
+                    }
                 }]
             });
         },
@@ -71,15 +81,6 @@ ddg.registerClass({
                     width: opts.width,
                     height: opts.height
                 }); ;
-        },
-
-        _generateYears: function () {
-            var opts = this.ddgApp.ddgOptions();
-
-            var years = this._years = [];
-            for (var i = 0, j = opts.previousYears + opts.futureYears + 1; i < j; i++) {
-                years.push(i);
-            }
         }
     }
 });
